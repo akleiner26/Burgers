@@ -1,3 +1,4 @@
+//Import MySQL Connection
 var connection = require("./connection.js");
 
 //Adds specified questions marks to query
@@ -27,6 +28,7 @@ function objToSql(ob) {
   }
   
   var orm = {
+//Select all From given Table in MySQL
     all: function(tableInput, cb) {
       var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
@@ -36,6 +38,7 @@ function objToSql(ob) {
         cb(result);
       });
     },
+//Create New Data in Burgerdb
     create: function(table, cols, vals, cb) {
       var queryString = "INSERT INTO " + table;
   
@@ -56,6 +59,7 @@ function objToSql(ob) {
         cb(result);
       });
     },
+ //Update Syntax for MySQL
     update: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
@@ -72,7 +76,17 @@ function objToSql(ob) {
   
         cb(result);
       });
+    },
+//Delete Syntax for MySQL
+    delete: function (table,col,val,cb){
+        connection.query("DELETE FROM ?? WHERE ?? = ?", [table, col, val], function(err,result){
+            if(err)
+            throw err;
+
+            cb(result);
+        })
     }
   };
 
+  //Export ORM for model burger.js
   module.exports = orm;

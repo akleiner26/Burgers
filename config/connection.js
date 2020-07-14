@@ -1,7 +1,10 @@
 
+//Setup MySQL Connection
 var mysql = require("mysql");
+//Setup Password Path
 require("dotenv").config();
 
+//MySQL Connection Data
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -10,6 +13,7 @@ var connection = mysql.createConnection({
   database: "burgersDB"
 });
 
+//Make connection
 connection.connect(function(err) {
     if (err) {
       console.error("error connecting: " + err.stack);
@@ -18,4 +22,5 @@ connection.connect(function(err) {
     console.log("connected as id " + connection.threadId);
   });
 
+//Export Connection for ORM
   module.exports = connection;
