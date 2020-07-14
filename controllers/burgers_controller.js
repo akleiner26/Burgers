@@ -1,16 +1,20 @@
+//Declare Required Variables, Import Database Functions
 var express = require("express");
 var burger = require("../models/burger.js");
 var router = express.Router();
 
+//Renders Home Directory
 router.get("/", function(req,res){
     burger.all(function(data){
         var hbsObject = {
             burgers: data
         };
+        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
+//Posts new Burger
 router.post("/api/burgers", function (req, res){
     burger.create([
         "burger_name", "devoured"
@@ -21,8 +25,10 @@ router.post("/api/burgers", function (req, res){
     });
 });
 
+//Updates Burger
 router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
+    console.log("condition", condition);
     burger.update({
       devoured: req.body.devoured
     }, condition, function(result) {
@@ -34,6 +40,7 @@ router.put("/api/burgers/:id", function(req, res) {
     });
   });
 
+//Deletes Burger
   router.delete("/api/burgers/:id", function(req, res) {
     let burgerId = req.params.id;  
     burger.delete("id", burgerId, function(result) {
@@ -41,7 +48,7 @@ router.put("/api/burgers/:id", function(req, res) {
     });
   });
 
-
+//Export to Server.js
   module.exports = router;
 
 
