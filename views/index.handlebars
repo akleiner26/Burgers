@@ -1,0 +1,35 @@
+<h1>Welcome to the Krusty Krab!</h1>
+<h2>Home of the Famous Krabby Patty</h2>
+
+<main class="container">
+    <section class="col-6">
+        <h3 id="unEatenHead">Your Burgers</h3>
+        <ul>
+            {{#each burgers}}
+                {{#unless this.eaten}}
+                    <li>this.burger</li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="col-6">
+        <h3 id="eatenHead">Burgers You Have Eaten</h3>
+        <ul>
+            {{#each burgers}}
+                {{#if this.eaten}}
+                    <li>this.burger</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </section>
+    <h2>Add a Krabby Patty</h2>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="ca">Burger Type:</label>
+            <input type="text" id="ca" name="name">
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+
+</main>
