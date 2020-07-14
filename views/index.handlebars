@@ -2,12 +2,13 @@
 <h2>Home of the Famous Krabby Patty</h2>
 
 <main class="container">
+    <section class="row">
     <section class="col-6">
         <h3 id="unEatenHead">Your Burgers</h3>
         <ul>
             {{#each burgers}}
-                {{#unless this.eaten}}
-                    <li>this.burger</li>
+                {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
                 {{/unless}}
             {{/each}}
         </ul>
@@ -17,11 +18,12 @@
         <h3 id="eatenHead">Burgers You Have Eaten</h3>
         <ul>
             {{#each burgers}}
-                {{#if this.eaten}}
-                    <li>this.burger</li>
+                {{#if this.devoured}}
+                    <li>{{this.burger_name}}</li>
                 {{/if}}
             {{/each}}
         </ul>
+    </section>
     </section>
     <h2>Add a Krabby Patty</h2>
     <form class="create-form">
