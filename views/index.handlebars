@@ -1,45 +1,48 @@
-<header class="jumbotron jumbotron-fluid">
-    <div class="container">
-<h1>Welcome to the Krusty Krab!</h1>
-<h4>Home of the Famous Krabby Patty</h4>
-</div>
-</header>
 <section class="mainBack">
-<main class="container">
-    <section class="row">
-    <section class="col-6">
-        <h3 id="colHead">Your Burgers</h3>
-        <ul>
-            {{#each burgers}}
-                {{#unless devoured}}
-                    {{> burgers/burger-block devour=true}}
-                {{/unless}}
-            {{/each}}
-        </ul>
-    </section>
+    <header class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Welcome to the Krusty Krab!</h1>
+        <h4>Home of the Famous Krabby Patty</h4>
+    </div>
+</header>
+    <main class="container">
+        <section class="row">
+            <section class="col-6">
+                <h3 id="colHead">Your Burgers</h3>
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/burger-block devour=true}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </section>
 
-    <section class="col-6">
-        <h3 id="colHead">Burgers You Have Eaten</h3>
-        <ul>
-            {{#each burgers}}
-                {{#if this.devoured}}
-                    {{> burgers/burger-block devour=false}}
-                {{/if}}
-            {{/each}}
-        </ul>
-    </section>
-    </section>
-    <section class="row mt-3">
-    <h4 class="col-12 offset-3 center">Add a Krabby Patty</h4>
-    <form class="create-form">
-    </section>
-    <section class="row">
-        <div class="form-group offset-3 center">
-            <label for="burg">Burger Type:</label>
-            <input type="text" id="burg" name="name">
-            <button type="submit center offset-3">Add Burger</button>
-        </div>    
-    </form>
-    </section>
+            <section class="col-6">
+                <h3 id="colHead">Burgers You Have Eaten</h3>
+                <ul>
+                    {{#each burgers}}
+                        {{#if this.devoured}}
+                            {{> burgers/burger-block devour=false}}
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </section>
+        </section>
+        <section class="row mt-3">
+            <h4 class="col-12 offset-3 center">Add a Krabby Patty</h4>   
+        </section>
+        <section class="row">
+            <form class="create-form"></form>
+                <div class="form-group offset-3 center">
+                    <label for="burg">Burger Type:</label>
+                    <input type="text" id="burg" name="name">
+                    <button type="submit center offset-3">Add Burger</button>
+                </div>    
+            </form>
+        </section>
+    </main>
 </section>
-</main>
+ <footer class="footer fixed-bottom">
+    <p>Thanks for Stopping By!</p>
+</footer>
