@@ -1,3 +1,37 @@
 header {
     text-align: center;
+    background-image: url("../img/bamboo.jpeg");
+    background-size: auto;
+    color: white;
+    margin-bottom: 0em !important;
+}
+
+#colHead{
+    margin-top: 15px;
+}
+
+.form-group{
+    margin-bottom: 0em !important;
+}
+
+body {
+    font-family: 'Slackey', cursive;
+}
+
+center {
+    text-align: center;
+    margin-left: 50%;
+    justify-content: center;
+}
+
+.mainBack {
+    background-image: url("../img/water.jpg");
+    background-size: auto;
+}
+
+.footer {
+    background-image: url("../img/bamboo.jpeg");
+    background-size: cover;
+    color: white;
+    margin: 0px !important;
 }

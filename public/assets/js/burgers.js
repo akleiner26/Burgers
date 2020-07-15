@@ -2,10 +2,8 @@ $(function () {
     //Sends Burgers to Devoured Column
     $(".change-devoured").on("click", function (event) {
         var id = $(this).data("id");
-        var newDevoured = $(this).data("newdevoured");
-        console.log(newDevoured)
         var newDevouredState = {
-            devoured: newDevoured
+            devoured: true
         };
         //Send Put Request
         $.ajax("/api/burgers/" + id, {
