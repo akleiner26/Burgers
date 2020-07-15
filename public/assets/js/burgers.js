@@ -19,12 +19,15 @@ $(function () {
     });
 
 //Creates a New Burger
-    $(".create-form").on("submit", function (event) {
+    $(".create-form").on("submit", function(event) {
         event.preventDefault();
+        console.log("hello")
         var newBurger = {
             name: $("#burg").val().trim(),
             devoured: 0
         };
+        console.log("Making burger")
+        console.log(newBurger);
 //Send Post Request
         $.ajax("/api/burgers", {
             type: "POST",
