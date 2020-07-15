@@ -3,7 +3,7 @@ $(function () {
     $(".change-devoured").on("click", function (event) {
         var id = $(this).data("id");
         var newDevoured = $(this).data("newdevoured");
-
+        console.log(newDevoured)
         var newDevouredState = {
             devoured: newDevoured
         };
@@ -12,7 +12,7 @@ $(function () {
             type: "PUT",
             data: newDevouredState
         }).then(
-            function () {
+            function (newDevoured) {
                 console.log("changed devoured to", newDevoured);
                 //Reload Page for Updated Lists
                 location.reload();
@@ -47,7 +47,7 @@ $(function () {
 
         $.ajax("/api/burgers/" + id, {
             type: "DELETE"
-        }).then (function(){
+        }).then (function(id){
             console.log(`Deleted burger with ID = ${id}`)
             location.reload();
         })
