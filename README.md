@@ -21,6 +21,8 @@ In order to install all dependencies, navigate to the root folder, and enter "np
 ## Usage:
 [Link to Deployed Site](https://afternoon-oasis-22216.herokuapp.com)
 
+[Link to Portfolio](https://akleiner26.github.io/Responsiveness-Portfolio/)
+
 ## Contributors:
 Andrew Kleiner
 
